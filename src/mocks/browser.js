@@ -4,7 +4,7 @@ let createHandlers = () => ({ handlers: [] });
 let reports = {};
 
 if (process.env.REACT_APP_MOCKED_SERVER_VERSION === "2") {
-  ({ createHandlers } = require('./browser/handlersV2'));
+  ({ createHandlers } = require('./handlers/handlersV2'));
   reports = require('./data/reportSeedsV2.json');
 } else {
   ({ createHandlers } = require('./handlers/handlersV1'));

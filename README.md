@@ -9,7 +9,7 @@ You will be adding Redux **thunks** onto a self-reflection report app called
 Progress Tracker Lite. This application should allow for the creation,
 display, updating, and deletion of reports.
 
-The necessary React components are provided in the __frontend__ folder.
+The necessary React components are provided in the __src__ folder.
 
 This application allows the user to perform CRUD on reports. Each report has
 three fields: `id`, `understanding`, and `improvement`.
@@ -22,12 +22,10 @@ If any step of the setup fails, ask an instructor for help.
 
 1. Download or clone the repository.
 2. Set up the React app that will make requests to the V1 Server.
-   - `cd` into **frontend** folder.
    - Run `npm install`.
    - Run `PORT=3001 npm run start-v1` to start the React app with the V1 Server
      that you can view at [http://localhost:3001].
 3. Set up the React app that will make requests to the V2 Server.
-   - `cd` into **frontend** folder.
    - Run `npm install` (if you haven't already).
    - Run `PORT=3002 npm run start-v2` to start the React app with the V2 Server
      that you can view at [http://localhost:3002].
@@ -55,9 +53,8 @@ some test specs.
 Take some time to familiarize yourself with the following code and documentation
 as you will need to understand them to complete your task:
 
-- Component files found in **frontend/src/components**
-- Redux reducer, actions and action creators found in
-  **frontend/src/store/report.js**
+- Component files found in **src/components**
+- Redux reducer, actions and action creators found in **/src/store/report.js**
 - Documentation for the V1 and V2 servers (see below; both servers have the same
   documentation)
 
@@ -261,8 +258,7 @@ In the browser, make sure the root page of the application (`/`) looks like this
 
 ![index-page-screenshot]
 
-Run the following command in the __frontend__ folder and pass the test specs to
-continue:
+Run the following command and pass the test specs to continue:
 
 ```sh
 npm test 1-display-report-list
@@ -303,7 +299,7 @@ Make sure the root page of the application, `/`, looks like this after the
 
 ![remove-report-screenshot]
 
-Run the following command in the __frontend__ folder and pass the test specs to continue:
+Run the following command and pass the test specs to continue:
 
 ```sh
 npm test 2-remove-report
@@ -328,7 +324,7 @@ like this in the browser:
 
 ![display-report-details-screenshot]
 
-Run the following command in the __frontend__ folder and pass the test specs to continue:
+Run the following command and pass the test specs to continue:
 
 ```sh
 npm test 3-display-report-details
@@ -368,7 +364,7 @@ form, similarly to the page below:
 
 ![report-details-after-create-screenshot]
 
-Run the following command in the __frontend__ folder and pass the test specs to continue:
+Run the following command and pass the test specs to continue:
 
 ```sh
 npm test 4-create-report
@@ -412,7 +408,7 @@ the form, similarly to the page below:
 
 ![report-details-after-update-screenshot]
 
-Run the following command in the __frontend__ folder and pass the test specs to continue:
+Run the following command and pass the test specs to continue:
 
 ```sh
 npm test 5-update-report

@@ -1,0 +1,13 @@
+{
+  "name": "reports-thunk",
+  "version": "1.0.0",
+  "description": "Read the ENTIRE instructions before running specs for the first time; it contains important information about running tests with Jest.",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install --prefix frontend",
+    "test-with-json": "npm run test-with-json --prefix frontend -- --outputFile='../test/score.json'; node test/calculateScore.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

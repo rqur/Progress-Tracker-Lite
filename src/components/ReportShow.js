@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 
 const ReportShow = () => {
   const { reportId } = useParams();
-  const report = {};
+  const report = {}; // populate from Redux store
 
   /* **DO NOT CHANGE THE RETURN VALUE** */
   return (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ReportIndexItem from './ReportIndexItem';
 
 const ReportIndex = () => {
-  const reports = [];
+  const reports = []; // populate from Redux store
 
   /* **DO NOT CHANGE THE RETURN VALUE** */
   return (

@@ -4,7 +4,7 @@ import ReportForm from './ReportForm';
 
 const EditReportForm = () => {
   const { reportId } = useParams();
-  const report = {};
+  const report = {}; // populate from Redux store
 
   if (!report) return(<></>);
 

@@ -1,8 +1,8 @@
 /** Action Type Constants: */
-export const LOAD_REPORTS = 'reports/LOAD_REPORTS';
-export const RECEIVE_REPORT = 'reports/RECEIVE_REPORT';
-export const UPDATE_REPORT = 'reports/UPDATE_REPORT';
-export const REMOVE_REPORT = 'reports/REMOVE_REPORT';
+export const LOAD_REPORTS = "reports/LOAD_REPORTS";
+export const RECEIVE_REPORT = "reports/RECEIVE_REPORT";
+export const UPDATE_REPORT = "reports/UPDATE_REPORT";
+export const REMOVE_REPORT = "reports/REMOVE_REPORT";
 
 /**  Action Creators: */
 export const loadReports = (reports) => ({
@@ -28,6 +28,79 @@ export const removeReport = (reportId) => ({
 /** Thunk Action Creators: */
 
 // Your code here
+
+//phase 1
+export const getAllReports = () => async (dispatch) => {
+  const res = await fetch("/api/reports");
+
+  if (res.ok) {
+    const reports = await res.json();
+    dispatch(loadReports(reports));
+  }
+};
+
+//phase 2
+export const deleteReport = (reportId) => async (dispatch) => {
+  const res = await fetch(`/api/reports/${reportId}`, {
+    method: "DELETE",
+  });
+
+  if (res.ok) {
+    dispatch(removeReport(reportId));
+  } else {
+    const errorData = await res.json();
+    console.log(errorData);
+    return errorData;
+  }
+};
+
+//phase 3
+export const getReport = (reportId) => async (dispatch) => {
+  const res = await fetch(`/api/reports/${reportId}`);
+
+  if (res.ok) {
+    const report = await res.json();
+    dispatch(receiveReport(report));
+  }
+};
+
+//phase 4
+export const createReport = (report) => async (dispatch) => {
+  const res = await fetch("/api/reports", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(report),
+  });
+
+  if (res.ok) {
+    const reportData = await res.json();
+    dispatch(receiveReport(reportData));
+    return reportData;
+  } else {
+    const errors = await res.json();
+    console.log(errors);
+    return errors;
+  }
+};
+
+//phase 5
+export const updateReport = (report) => async (dispatch) => {
+  const res = await fetch(`/api/reports/${report.id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(report),
+  });
+
+  if (res.ok) {
+    const reportData = await res.json();
+    dispatch(editReport(reportData));
+    return reportData;
+  } else {
+    const errors = await res.json();
+    console.log(errors);
+    return errors;
+  }
+};
 
 /** The reports reducer is complete and does not need to be modified */
 const reportsReducer = (state = {}, action) => {

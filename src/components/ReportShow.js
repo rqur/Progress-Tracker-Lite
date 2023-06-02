@@ -1,8 +1,19 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { getReport } from "../store/reports";
 
 const ReportShow = () => {
+  const dispatch = useDispatch();
   const { reportId } = useParams();
-  const report = {}; // populate from Redux store
+  const report = useSelector((state) =>
+    state.reports ? state.reports[reportId] : null
+  ); // populate from Redux store
+
+  useEffect(() => {
+    dispatch(getReport(reportId));
+  }, [dispatch, reportId]);
 
   /* **DO NOT CHANGE THE RETURN VALUE** */
   return (
@@ -24,10 +35,7 @@ const ReportShow = () => {
           </tr>
         </tbody>
       </table>
-      <Link
-        className="back-button"
-        to="/"
-      >
+      <Link className="back-button" to="/">
         Back to Report Index
       </Link>
     </section>

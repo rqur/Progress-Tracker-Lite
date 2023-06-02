@@ -1,14 +1,13 @@
-import React from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import React from "react";
+import { NavLink, Route, Switch } from "react-router-dom";
 
-import ReportIndex from './components/ReportIndex';
-import CreateReportForm from './components/CreateReportForm';
-import EditReportForm from './components/EditReportForm';
-import ReportShow from './components/ReportShow';
-
+import ReportIndex from "./components/ReportIndex";
+import CreateReportForm from "./components/CreateReportForm";
+import EditReportForm from "./components/EditReportForm";
+import ReportShow from "./components/ReportShow";
 const App = () => (
   <>
-    <NavLink to={'/'}>
+    <NavLink to={"/"}>
       <h1>Progress Tracker Lite</h1>
     </NavLink>
     <Switch>

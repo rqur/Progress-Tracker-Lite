@@ -2,6 +2,7 @@
 
 Read the ENTIRE instructions before running specs for the first time; it
 contains important information about running tests with Jest.
+![Progress Tracker-Lite](https://github.com/rqur/Progress-Tracker-Lite/assets/121047683/5da454a1-784e-4940-adb6-c9adfde11b86)
 
 ## Background
 

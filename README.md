@@ -1,4 +1,4 @@
-# React-Redux With Thunks Project Assessment
+# React-Redux With Thunks Project 
 
 Read the ENTIRE instructions before running specs for the first time; it
 contains important information about running tests with Jest.
